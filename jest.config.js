@@ -26,7 +26,7 @@ const jestSwcConfig = {
     },
     experimental: {
       plugins: [
-        ["swc_mut_cjs_exports", {}],
+        // ["swc_mut_cjs_exports", {}],
       ],
     },
   },
@@ -40,7 +40,8 @@ const jestConfig = {
   testEnvironment: 'jsdom',
   clearMocks: true,
   testPathIgnorePatterns: [`<rootDir>/node_modules/`],
-  transformIgnorePatterns: [],
+  transformIgnorePatterns: ['node_modules'],
+  setupFilesAfterEnv: ['./jest-setup.js'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['@swc/jest', jestSwcConfig],
   },
