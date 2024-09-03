@@ -25,7 +25,9 @@ const jestSwcConfig = {
       mangle: false,
     },
     experimental: {
-      plugins: [],
+      plugins: [
+        ["swc_mut_cjs_exports", {}],
+      ],
     },
   },
 };
